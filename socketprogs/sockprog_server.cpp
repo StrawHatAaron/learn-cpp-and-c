@@ -78,6 +78,10 @@ int main()
     // PART 5 -  Close the listening socket
     close(listening);
 
+
+
+    //******************************************************************************************
+
     // need to clean things up with memset so that we don't get unexpected behavior
 
     // ptr ==> Starting address of memory to be filled
@@ -111,6 +115,8 @@ int main()
         inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
         cout << host << "connected on" << ntohs(client.sin_port) << endl;
     }
+
+//******************************************************************************************
 
     // PART 6 -  While receiving - display messge, echo message
     char buf[4096];

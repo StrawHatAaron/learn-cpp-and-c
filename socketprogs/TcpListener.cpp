@@ -11,7 +11,7 @@
 
 #include "TcpListener.h"
 
-#define MAX_BUFFER_SIZE 8192
+#define MAX_BUFFER_SIZE (8192)
 
 
 // // Callback to data recieved
@@ -39,12 +39,13 @@ void CTcpListener::Send(int clientSocket, std::string msg)
 
 // Initialize socket
 bool CTcpListener::Init(){
-// 12 mins
+    // 12 mins - this seems to be only things windows needs
+    return false;
 
 };
 
 // The main processsing loop
-void CTcpListener::Run(int listening)
+void CTcpListener::Run()
 {
     // int clientSocket = WaitForConnection(listening);
 

@@ -6,7 +6,6 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-#include <string.h>
 #include <string>
 
 // Forward declaration of class
@@ -29,7 +28,7 @@ public:
     bool Init();
 
     // The main processsing loop
-    void Run(int listening);
+    void Run();
 
     void Cleanup();
 

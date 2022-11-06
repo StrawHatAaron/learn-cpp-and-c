@@ -1,24 +1,25 @@
 #include <iostream>
 #include <string>
 
-#include "TcpListener.h"
+#include "TcpListener.cpp"
 
-using namespace std;
 
-void Listener_MessageRecieved(CTcpListener *listener, int client, string msg);
+void Listener_MessageRecieved(CTcpListener *listener, int client, std::string msg);
 
-void main()
+int main()
 {
 
     CTcpListener server("127.0.0.1", 54010, Listener_MessageRecieved);
 
-    if (server.Init())
-    {
-        server.Run();
-    }
+    // if (server.Init())
+    // {
+    server.Run();
+    // }
+
+    return 0;
 };
 
-void Listener_MessageReceived(CTcpListener *listener, int client, string msg)
+void Listener_MessageReceived(CTcpListener *listener, int client, std::string msg)
 {
     listener->Send(client, msg);
 };
