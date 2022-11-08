@@ -3,7 +3,7 @@
 #Compiler
 CC = g++
 #Compiler Flags
-CFLAGS = -o
+CFLAGS = -wall -o
 
 
 
@@ -11,11 +11,11 @@ sock: sockprog_server.cpp
 	$(CC) $(CFLAGS) sockprog_server sockprog_server.cpp
 
 tcplisten: TcpListener.cpp
-	g++ -o TcpListener TcpListener.cpp
+	$(CC) $(CFLAGS) TcpListener TcpListener.cpp
 
 all: TcpListener.cpp main.cpp
-	g++ -o TcpListener TcpListener.cpp
-	g++ -o main main.cpp 
+	$(CC) $(CFLAGS) TcpListener TcpListener.cpp
+	$(CC) $(CFLAGS) main main.cpp 
 
 clean:
 
